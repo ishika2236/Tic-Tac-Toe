@@ -16,3 +16,4 @@ const getMatchHistory = async(req,res)=>{
         
     }
 }
+module.exports = getMatchHistory;
