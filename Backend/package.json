@@ -20,5 +20,17 @@
     "mongoose": "^8.7.0",
     "nodemon": "^3.1.7",
     "socket.io": "^4.8.0"
-  }
+  },
+  "build":[
+    {
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ]
+  
 }
