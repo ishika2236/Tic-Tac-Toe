@@ -1,0 +1,66 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+  
+  .container {
+    max-width: 1200px;
+    padding: 1rem;
+  }
+  
+  .navbar {
+    margin: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
+    position: fixed; /* Ensure proper positioning */
+    box-sizing: border-box; /* Include padding in width calculations */
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    margin: .5rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--accent-color);
+  }
+  
+  .navbar button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  body.light-mode {
+    background-color: #f3eeee;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: var(--primary-bg-dark);
+    color: var(--text-color-dark);
+}
+
+  .nav-right{
+    display: flex;
+  }

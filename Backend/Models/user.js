@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
     matchesPlayed: { type: Number, default: 0 },
     matchesWon: { type: Number, default: 0 },
     matchesLost: { type: Number, default: 0 },
+    playerScore : {type: Number, default:0}
 });
 
 const User = mongoose.model('User', userSchema);

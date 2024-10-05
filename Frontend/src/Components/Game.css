@@ -1,0 +1,106 @@
+.game-layout {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure full width */
+    max-width: 1000px; /* Optional max width */
+    margin: 2rem auto; /* Centering the layout */
+  }
+  
+  .game-info {
+    flex: 1; /* Allow it to take equal space */
+    margin-right: 2rem; /* Optional space between elements */
+    text-align: center;
+  }
+  
+  .board-container {
+    flex: 1; /* Allow it to take equal space */
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 100%; /* Full width of the container */
+    margin: 0 auto; /* Center the board */
+    border: 1px solid var(--accent-color);
+    border-radius: 15px;
+    padding: 1rem;
+  }
+  
+  .cell {
+    background-color: var(--secondary-bg-dark);
+    color: var(--text-color-dark);
+    font-size: 2rem;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .cell:hover {
+    border-color: var(--gradient-start);
+    color: var(--text-color-dark);
+  }
+  
+  .cell:disabled {
+    background-color: var(--secondary-bg-dark);
+    color: var(--text-color-dark);
+    cursor: not-allowed;
+  }
+  
+  .game-buttons button {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    border: none;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .gradient-button {
+    width: 20rem;
+    height: 6rem;
+    margin: 3rem;
+  }
+  
+  .gradient-button:hover {
+    background: linear-gradient(to right, var(--gradient-end), var(--gradient-start));
+  }
+  
+  .alert {
+    text-align: center;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .game-container {
+    background-color: var(--secondary-bg-light);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+  }
+  
+  .game-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+  }
+  
+  .game-controls {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .game-info p {
+    margin: 5px 0;
+  }
+  
