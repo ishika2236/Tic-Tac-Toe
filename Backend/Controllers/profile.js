@@ -18,16 +18,22 @@ const getProfile = async (req, res) => {
 
         const matches = await Match.find({ $or: [{ playerX: user._id }, { playerO: user._id }] })
             .sort({ date: -1 })
-            .limit(10)  
-            .populate('playerX', 'username')
-            .populate('playerO', 'username')
+            .limit(10)
+            .populate('playerX', 'username avatar')
+            .populate('playerO', 'username avatar')
             .populate('winner', 'username');
 
         const matchesDraw = user.matchesPlayed - (user.matchesWon + user.matchesLost);
 
         const matchHistory = matches.map(match => ({
-            playerX: match.playerX.username,
-            playerO: match.playerO.username,
+            playerX: {
+                username: match.playerX.username,
+                avatar: match.playerX.avatar
+            },
+            playerO: {
+                username: match.playerO.username,
+                avatar: match.playerO.avatar
+            },
             date: match.date,
             winner: match.winner ? match.winner.username : 'Draw'
         }));
@@ -39,7 +45,8 @@ const getProfile = async (req, res) => {
             matchesWon: user.matchesWon,
             matchesLost: user.matchesLost,
             matchesDraw: matchesDraw,
-            matchHistory: matchHistory
+            matchHistory: matchHistory,
+            avatar: user.avatar
         };
 
         res.status(200).json(profileData);
@@ -49,4 +56,4 @@ const getProfile = async (req, res) => {
     }
 };
 
-module.exports = {getProfile};
+module.exports = { getProfile };

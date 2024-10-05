@@ -10,7 +10,7 @@ body {
   
   .container {
     max-width: 1200px;
-    padding: 1rem;
+    padding: .5rem;
   }
   
   .navbar {
@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem;
+    padding: 0rem;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     top: 0;
@@ -27,7 +27,9 @@ body {
     position: fixed; /* Ensure proper positioning */
     box-sizing: border-box; /* Include padding in width calculations */
   }
-  
+ .navbar.light-mode{
+    background-color: bisque;
+ } 
   .nav-links {
     display: flex;
     gap: 1rem;
@@ -63,4 +65,10 @@ body.dark-mode {
 
   .nav-right{
     display: flex;
+  }
+  .avatar {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    object-fit: cover; 
   }
